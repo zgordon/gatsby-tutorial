@@ -1,8 +1,8 @@
-import React from "react"
-import useSiteMetadata from "../hooks/use-sitemetadata"
+import React from "react";
+import useSiteMetadata from "../hooks/use-sitemetadata";
 
 export default () => {
-  const { title, description } = useSiteMetadata()
+  const { title, description } = useSiteMetadata();
 
   return (
     <footer>
@@ -11,5 +11,5 @@ export default () => {
         Copyright {title} - {description}
       </p>
     </footer>
-  )
-}
+  );
+};

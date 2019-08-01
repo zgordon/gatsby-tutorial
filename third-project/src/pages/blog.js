@@ -1,6 +1,7 @@
-import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import Layout from "../components/layout"
+import React from "react";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import Layout from "../components/layout";
+import SEO from "components/seo";
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -17,12 +18,13 @@ export default () => {
         }
       }
     }
-  `)
+  `);
 
-  const posts = data.allMdx.nodes
+  const posts = data.allMdx.nodes;
 
   return (
     <Layout>
+      <SEO title="Blog" description="Posts on Gatsby" />
       <h1>Blog Posts</h1>
       <hr />
       {posts.map(({ id, frontmatter: { title, excerpt, slug } }) => (
@@ -34,5 +36,5 @@ export default () => {
         </article>
       ))}
     </Layout>
-  )
-}
+  );
+};
